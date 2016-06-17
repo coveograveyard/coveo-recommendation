@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Coveo Recommendation demo",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "author": "Coveo <sandbox_JSUI@coveo.com> (http://source.coveo.com/)",
   "license": "Apache-2.0",
   "dependencies": {
