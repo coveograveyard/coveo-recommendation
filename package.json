@@ -6,6 +6,7 @@
   "author": "Coveo <sandbox_JSUI@coveo.com> (http://source.coveo.com/)",
   "license": "Apache-2.0",
   "dependencies": {
-    "coveo-search-ui": "0.0.*"
+    "coveo-search-ui": "0.0.*",
+    "express": "^4.13.4"
   }
 }
