@@ -8,7 +8,7 @@ app.use('/search', express.static(__dirname + '/node_modules/coveo-search-ui/bin
 app.use(express.static(__dirname + '/pages'));
 
 app.get('/', function(req, res){
-  res.render('index');
+  res.sendFile('index.html');
 })
 
 app.listen(port, function(){
