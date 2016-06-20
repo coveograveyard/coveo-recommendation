@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <title>StarWars</title> 
     <script type="text/javascript" src="lib/coveoua.js"></script>
+    <script src="search/js/CoveoJsSearch.js"></script>
+    <script src="search/js/CoveoJsSearch.dependencies.js"></script>
+    <link rel="stylesheet" href="search/css/CoveoFullSearchNewDesign.css"/>
     <script>
-      coveoua('init','75a8f974-1d44-43a4-b69b-f4ff00d7c575', 'https://usageanalyticsdev.coveo.com');
-      coveoua('send','pageview', {
-        contentIdKey: 'systitle',
-        contentIdValue: 'StarWars'
-      });
+      document.addEventListener('DOMContentLoaded', function(){
+        coveoua('init','75a8f974-1d44-43a4-b69b-f4ff00d7c575', 'https://usageanalyticsdev.coveo.com');
+        coveoua('send','pageview', {
+          contentIdKey: 'systitle',
+          contentIdValue: 'StarWars'
+        });
+        Coveo.SearchEndpoint.configureCloudEndpoint('Coveo Dev', '75a8f974-1d44-43a4-b69b-f4ff00d7c575', 'https://cloudplatformdev.coveo.com/rest/search');
+        Coveo.initRecommendation(document.querySelector('#recommendation'));
+      })
     </script>
   </head>
   <body >
@@ -20,35 +27,48 @@
       <li><a href="Lorem.html">Lorem</a></li>
       <li><a href="Recommendation.html">Recommendation</a></li>
    </ul>
-<p>
-The entire starfleet couldn't destroy the whole planet. It'd take a thousand ships with more fire power than I've... There's another ship coming in. Maybe they know what happened. It's an Imperial fighter. It followed us! No. It's a short range fighter. There aren't any bases around here. Where did it come from? It sure is leaving in a big hurry. If they identify us, we're in big trouble. Not if I can help it. Chewie...jam it's transmissions. It'd be as well to let it go. It's too far out of range. Not for long...
-</p>
-<p>
-The Death Star plans are not in the main computer. Where are those transmissions you intercepted? What have you done with those plans? We intercepted no transmissions. Aaah....This is a consular ship. Were on a diplomatic mission. If this is a consular ship...were is the Ambassador? Commander, tear this ship apart until you've found those plans and bring me the Ambassador. I want her alive! There she is! Set for stun! She'll be all right. Inform Lord Vader we have a prisoner.
-</p>
-<p>
-You're safe! We had feared the worst. When we heard about Alderaan, we were afraid that you were... We don't have time for our sorrows, Commander. The battle station has surely tracked us here. It's the only explanation for the ease of our escape. You must use the information in this R2 unit to plan the attack. It is our only hope. Yes. We are approaching the planet Yavin. The Rebel base is on a moon on the far side. We are preparing to orbit the planet.
-</p>
-<p>
-Let me see your identification. You don't need to see his identification. We don't need to see his identification. These are not the droids your looking for. These are not the droids we're looking for. He can go about his business. You can go about your business. Move along. Move along. Move along.
-</p>
-<p>
-What good's a reward if you ain't around to use it? Besides, attacking that battle station ain't my idea of courage. It's more like suicide. All right. Well, take care of yourself, Han. I guess that's what you're best at, isn't it? Hey, Luke...may the Force be with you! What're you lookin' at? I know what I'm doing.
-</p>
-<p>
-Luke? Luke? Luke? Have you seen Luke this morning? He said he had some things to do before he started today, so he left early. Uh? Did he take those two new droids with him? I think so. Well, he'd better have those units in the south range repaired be midday or there'll be hell to pay! Wait, there's something dead ahead on the scanner. It looks like our droid...hit the accelerator.
-</p>
-<p>
-We've entered the Alderaan system. Governor Tarkin, I should have expected to find you holding Vader's leash. I recognized your foul stench when I was brought on board. Charming to the last. You don't know how hard I found it signing the order to terminate your life! I surprised you had the courage to take the responsibility yourself! Princess Leia, before your execution I would like you to be my guest at a ceremony that will make this battle station operational. No star system will dare oppose the Emperor now. The more you tighten your grip, Tarkin, the more star systems will slip through your fingers.
-</p>
-<p>
-They must be delivered safely or other star systems will suffer the same fate as Alderaan. Your destiny lies along a different path than mine. The Force will be with you...always! Boy you said it, Chewie. Where did you dig up that old fossil? Ben is a great man. Yeah, great at getting us into trouble. I didn't hear you give any ideas... Well, anything would be better than just hanging around waiting for him to pick us up... Who do you think...
-</p>
-<p>
-My scope's negative. I don't see anything. Keep up your visual scanning. With all this jamming, they'll be on top of you before your scope can pick them up. Biggs! You've picked one up...watch it! I can't see it! Where is he?! He's on me tight, I can't shake him...I can't shake him. Hang on, Biggs, I'm coming in. Got him!
-</p>
-<p>
-Let him go! Stay on the leader! Hurry, Luke, they're coming in much faster this time. I can't hold them! Artoo, try and increase the power! Hurry up, Luke! Wait! I'm on the leader. Hang on, Artoo! Use the Force, Luke. Let go, Luke. The Force is strong with this one! Luke, trust me. His computer's off. Luke, you switched off your targeting computer. What's wrong? Nothing. I'm all right. I've lost Artoo! You may fire when ready. I have you now.
-<p>
+   <div class="content">
+    <div class="content-text" style="width:80%; display:inline-block">
+      <p>
+      The entire starfleet couldn't destroy the whole planet. It'd take a thousand ships with more fire power than I've... There's another ship coming in. Maybe they know what happened. It's an Imperial fighter. It followed us! No. It's a short range fighter. There aren't any bases around here. Where did it come from? It sure is leaving in a big hurry. If they identify us, we're in big trouble. Not if I can help it. Chewie...jam it's transmissions. It'd be as well to let it go. It's too far out of range. Not for long...
+      </p>
+      <p>
+      The Death Star plans are not in the main computer. Where are those transmissions you intercepted? What have you done with those plans? We intercepted no transmissions. Aaah....This is a consular ship. Were on a diplomatic mission. If this is a consular ship...were is the Ambassador? Commander, tear this ship apart until you've found those plans and bring me the Ambassador. I want her alive! There she is! Set for stun! She'll be all right. Inform Lord Vader we have a prisoner.
+      </p>
+      <p>
+      You're safe! We had feared the worst. When we heard about Alderaan, we were afraid that you were... We don't have time for our sorrows, Commander. The battle station has surely tracked us here. It's the only explanation for the ease of our escape. You must use the information in this R2 unit to plan the attack. It is our only hope. Yes. We are approaching the planet Yavin. The Rebel base is on a moon on the far side. We are preparing to orbit the planet.
+      </p>
+      <p>
+      Let me see your identification. You don't need to see his identification. We don't need to see his identification. These are not the droids your looking for. These are not the droids we're looking for. He can go about his business. You can go about your business. Move along. Move along. Move along.
+      </p>
+      <p>
+      What good's a reward if you ain't around to use it? Besides, attacking that battle station ain't my idea of courage. It's more like suicide. All right. Well, take care of yourself, Han. I guess that's what you're best at, isn't it? Hey, Luke...may the Force be with you! What're you lookin' at? I know what I'm doing.
+      </p>
+      <p>
+      Luke? Luke? Luke? Have you seen Luke this morning? He said he had some things to do before he started today, so he left early. Uh? Did he take those two new droids with him? I think so. Well, he'd better have those units in the south range repaired be midday or there'll be hell to pay! Wait, there's something dead ahead on the scanner. It looks like our droid...hit the accelerator.
+      </p>
+      <p>
+      We've entered the Alderaan system. Governor Tarkin, I should have expected to find you holding Vader's leash. I recognized your foul stench when I was brought on board. Charming to the last. You don't know how hard I found it signing the order to terminate your life! I surprised you had the courage to take the responsibility yourself! Princess Leia, before your execution I would like you to be my guest at a ceremony that will make this battle station operational. No star system will dare oppose the Emperor now. The more you tighten your grip, Tarkin, the more star systems will slip through your fingers.
+      </p>
+      <p>
+      They must be delivered safely or other star systems will suffer the same fate as Alderaan. Your destiny lies along a different path than mine. The Force will be with you...always! Boy you said it, Chewie. Where did you dig up that old fossil? Ben is a great man. Yeah, great at getting us into trouble. I didn't hear you give any ideas... Well, anything would be better than just hanging around waiting for him to pick us up... Who do you think...
+      </p>
+      <p>
+      My scope's negative. I don't see anything. Keep up your visual scanning. With all this jamming, they'll be on top of you before your scope can pick them up. Biggs! You've picked one up...watch it! I can't see it! Where is he?! He's on me tight, I can't shake him...I can't shake him. Hang on, Biggs, I'm coming in. Got him!
+      </p>
+      <p>
+      Let him go! Stay on the leader! Hurry, Luke, they're coming in much faster this time. I can't hold them! Artoo, try and increase the power! Hurry up, Luke! Wait! I'm on the leader. Hang on, Artoo! Use the Force, Luke. Let go, Luke. The Force is strong with this one! Luke, trust me. His computer's off. Luke, you switched off your targeting computer. What's wrong? Nothing. I'm all right. I've lost Artoo! You may fire when ready. I have you now.
+      </p>
+    </div>
+    <div id="recommendation" class="CoveoRecommendation" data-design="new" data-results-per-page="5" data-pipeline="Recommendation - DO NOT DELETE" style="float:right; width:19%">
+      <div class="coveo-recommendation-header">
+        <div class="coveo-recommendation-title">Recommendations</div>
+      </div>
+      <div class="coveo-recommendation-body">
+        <div class="CoveoSearchbox" data-enable-omnibox="true"></div>
+        <div class="CoveoResultList"></div>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
