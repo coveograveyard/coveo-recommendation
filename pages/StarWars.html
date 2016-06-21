@@ -20,6 +20,7 @@
         Coveo.$$(document.querySelector('#resetHistoryButton')).on('click', function() {
           let historyStore = new coveoanalytics.history.HistoryStore();
           historyStore.clear();
+          Coveo.executeQuery(document.querySelector('#recommendation'));
         })
 
         Coveo.$$(document.querySelector('#recommendation')).on('buildingQuery', function(e, args) {
@@ -30,6 +31,7 @@
     </script>
   </head>
   <body >
+    <button id="resetHistoryButton" style="float: right">Reset history</button>
     <ul>
       <li><a href="StarWars.html">StarWars</a></li>
       <li><a href="Cat.html">Cat</a></li>

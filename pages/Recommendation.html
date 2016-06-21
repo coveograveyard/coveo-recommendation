@@ -18,6 +18,7 @@
         Coveo.$$(document.querySelector('#resetHistoryButton')).on('click', function() {
           let historyStore = new coveoanalytics.history.HistoryStore();
           historyStore.clear();
+          Coveo.executeQuery(document.querySelector('#search'));
         })
 
         Coveo.$$(document.querySelector('#search')).on('buildingQuery', function(e, args) {
