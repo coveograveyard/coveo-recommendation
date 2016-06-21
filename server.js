@@ -9,7 +9,7 @@ app.use('/lib', express.static(process.cwd() + '/lib/'))
 app.use(express.static(process.cwd() + '/pages'));
 
 app.get('/', function(req, res){
-  res.redirect('/Index.html');
+  res.redirect('/Recommendation.html');
 })
 
 app.listen(port, function(){

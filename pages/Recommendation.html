@@ -19,6 +19,15 @@
           let historyStore = new coveoanalytics.history.HistoryStore();
           historyStore.clear();
         })
+
+        Coveo.$$(document.querySelector('#search')).on('buildingQuery', function(e, args) {
+          args.queryBuilder.enableDebug = true;
+        })
+
+        Coveo.$$(document.querySelector('#recommendation')).on('buildingQuery', function(e, args) {
+          args.queryBuilder.enableDebug = true;
+        })
+
       })
     </script>
   </head>
