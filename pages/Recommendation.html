@@ -14,10 +14,16 @@
         Coveo.initRecommendation(document.querySelector('#recommendation'), document.querySelector('#search'));
         Coveo.init(document.querySelector('#search'));
         coveoua('init','75a8f974-1d44-43a4-b69b-f4ff00d7c575', 'https://usageanalyticsdev.coveo.com');
+
+        Coveo.$$(document.querySelector('#resetHistoryButton')).on('click', function() {
+          let historyStore = new coveoanalytics.history.HistoryStore();
+          historyStore.clear();
+        })
       })
     </script>
   </head>
   <body>
+    <button id="resetHistoryButton" style="float: right">Reset history</button>
     <ul>
       <li><a href="StarWars.html">StarWars</a></li>
       <li><a href="Cat.html">Cat</a></li>

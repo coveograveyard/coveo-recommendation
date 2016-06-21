@@ -10,9 +10,16 @@
         contentIdKey: 'systitle',
         contentIdValue: 'Cat'
       });
+      document.addEventListener('DOMContentLoaded', function(){
+        document.querySelector('#resetHistoryButton').addEventListener('click', function() {
+          let historyStore = new coveoanalytics.history.HistoryStore();
+          historyStore.clear();
+        })
+      })
     </script>
   </head>
   <body>
+    <button id="resetHistoryButton" style="float: right">Reset history</button>
     <ul>
       <li><a href="StarWars.html">StarWars</a></li>
       <li><a href="Cat.html">Cat</a></li>

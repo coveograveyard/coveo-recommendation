@@ -16,6 +16,11 @@
         });
         Coveo.SearchEndpoint.configureCloudEndpoint('Coveo Dev', '75a8f974-1d44-43a4-b69b-f4ff00d7c575', 'https://cloudplatformdev.coveo.com/rest/search');
         Coveo.initRecommendation(document.querySelector('#recommendation'));
+
+        Coveo.$$(document.querySelector('#resetHistoryButton')).on('click', function() {
+          let historyStore = new coveoanalytics.history.HistoryStore();
+          historyStore.clear();
+        })
       })
     </script>
   </head>
@@ -65,7 +70,6 @@
         <div class="coveo-recommendation-title">Recommendations</div>
       </div>
       <div class="coveo-recommendation-body">
-        <div class="CoveoSearchbox" data-enable-omnibox="true"></div>
         <div class="CoveoResultList"></div>
       </div>
     </div>
