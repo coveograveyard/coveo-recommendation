@@ -15,16 +15,17 @@
           contentIdValue: 'StarWars'
         });
         Coveo.SearchEndpoint.configureCloudEndpoint('Coveo Dev', '75a8f974-1d44-43a4-b69b-f4ff00d7c575', 'https://cloudplatformdev.coveo.com/rest/search');
+
+        Coveo.$$(document.querySelector('#recommendation')).on('buildingQuery', function(e, args) {
+          args.queryBuilder.enableDebug = true;
+        })
+
         Coveo.initRecommendation(document.querySelector('#recommendation'));
 
         Coveo.$$(document.querySelector('#resetHistoryButton')).on('click', function() {
           let historyStore = new coveoanalytics.history.HistoryStore();
           historyStore.clear();
           Coveo.executeQuery(document.querySelector('#recommendation'));
-        })
-
-        Coveo.$$(document.querySelector('#recommendation')).on('buildingQuery', function(e, args) {
-          args.queryBuilder.enableDebug = true;
         })
 
       })
