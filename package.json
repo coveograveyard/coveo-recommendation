@@ -10,7 +10,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "coveo.analytics": "*",
-    "coveo-search-ui": "0.0.30",
+    "coveo-search-ui": "1.667.x",
     "express": "^4.13.4"
   },
   "engines": {
